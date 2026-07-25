@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is the main topic of the uploaded document?",
+    "ground_truth": "Replace with the actual expected answer for your test PDF."
+  },
+  {
+    "question": "What are the key conclusions or recommendations mentioned?",
+    "ground_truth": "Replace with the actual expected answer for your test PDF."
+  },
+  {
+    "question": "Are there any dates, figures, or statistics mentioned, and what do they refer to?",
+    "ground_truth": "Replace with the actual expected answer for your test PDF."
+  },
+  {
+    "question": "Who are the authors or organizations referenced in the document?",
+    "ground_truth": "Replace with the actual expected answer for your test PDF."
+  },
+  {
+    "question": "What problem or question does the document primarily address?",
+    "ground_truth": "Replace with the actual expected answer for your test PDF."
+  }
+]
