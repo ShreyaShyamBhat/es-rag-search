@@ -11,7 +11,7 @@ from app.services.embeddings import embed_texts
 from app.services.memory import append_message, condense_question, get_history
 from app.services.rerank import rerank
 from app.services.search import ScoredChunk, hybrid_search
-from app.utils.sse import sse_event, sse_json_event
+from app.utils.sse import sse_json_event
 
 logger = logging.getLogger(__name__)
 
@@ -61,12 +61,12 @@ async def run_query(
         )
     except Exception:
         logger.exception("Retrieval/rerank failed for session %s", session_id)
-        yield sse_event("Sorry, something went wrong while searching your documents.")
+        yield sse_json_event("Sorry, something went wrong while searching your documents.")
         yield sse_json_event({}, event="done")
         return
 
     if not top_sources:
-        yield sse_event("I couldn't find any relevant content in the uploaded documents.")
+        yield sse_json_event("I couldn't find any relevant content in the uploaded documents.")
         yield sse_json_event([], event="sources")
         yield sse_json_event({}, event="done")
         await append_message(
@@ -91,7 +91,7 @@ async def run_query(
         delta = chunk.choices[0].delta.content if chunk.choices else None
         if delta:
             answer_parts.append(delta)
-            yield sse_event(delta)
+            yield sse_json_event(delta)
 
     full_answer = "".join(answer_parts)
 
