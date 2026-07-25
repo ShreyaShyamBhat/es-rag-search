@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Env
+.env
+.env.local
+
+# Docker
+*.log
+
+# Eval outputs
+eval/results/
+
+# Elasticsearch/Redis data volumes (if bind-mounted locally)
+es_data/
+redis_data/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db

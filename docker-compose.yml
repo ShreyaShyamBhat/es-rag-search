@@ -1,0 +1,6 @@
+version: "3.9"
+
+# Services (elasticsearch, redis, backend, frontend) are wired in once
+# each component is built out. See README.md for the full architecture.
+
+services: {}
